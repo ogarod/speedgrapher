@@ -11,14 +11,14 @@ class SpeedGrapherDemo : public QWidget {
   virtual ~SpeedGrapherDemo();
 
  public slots:
-  void Run();
+  void Step();
 
  private:
   SpeedGrapher* speed_grapher_;
   QTimer* timer_;
   int num_points_;
   double num_oscillations_;
-  int interval_;
+  int interval_ms_;
   std::vector<double> ys_;
   int iter_;
 };
