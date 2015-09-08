@@ -8,11 +8,12 @@ Using the widget is pretty straightforward. First, instantiate a SpeedGrapher. Y
 ```cpp
 #include "speed-grapher.h"
 ...
-SpeedGrapher* speed_grapher = new SpeedGrapher(this); // Default size and gridline count.
+ // Default size and gridline count.
+SpeedGrapher* speed_grapher = new SpeedGrapher(this);
 ```
 While the operation you want to visualize is in progress, call  `AddDataPoint()` to add data points to the SpeedGrapher. Usually, you would do this within the slot of a `QTimer`'s `timeout()` signal. The SpeedGrapher updates the plot whenever a new data point is added. You have the option of specifying a caption that is displayed along with the horizontal indicator line (if none is given, the data point that was just added is used as the caption).
 ```cpp
-speed_grapher->AddDataPoint(data_point, progress, caption); // progress must be between 0 and 1.
+speed_grapher->AddDataPoint(data_point, progress, caption);
 ```
 The color theme for the SpeedGrapher is highly customizable. You use `SetStyleAttribute()` to change particular style attributes for a SpeedGrapher instance. The default style attributes are defined in `speedgrapher.cc`
 ```cpp
