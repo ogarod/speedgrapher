@@ -27,16 +27,14 @@
 
 #define _USE_MATH_DEFINES 1;
 #include <math.h>
-#include <QGraphicsView>
-#include <QSize>
 #include <vector>
-#include <string>
-#include <memory>
-#include <QVariant>
-#include <QPainterPath>
-#include <QString>
-#include <QObject>
 
+#include <QGraphicsView>
+#include <QObject>
+#include <QPainterPath>
+#include <QSize>
+#include <QString>
+#include <QVariant>
 
 // A widget for real-time visualization of speed and progress - the combination
 // of a line graph and a progress bar.
@@ -82,7 +80,8 @@ class SpeedGrapher : public QGraphicsView {
                     const QString& indicator_text);
   void AddDataPoint(double y, double progress);
 
-  // Refreshes the plot. This is typically called right after AddDataPoint().
+  // Refreshes the plot. You only need to call this directly if you do not
+  // want the indicators shown (horizontal indicator line and caption).
   void UpdatePlot(bool show_indicators);
 
   // Getters and setters.

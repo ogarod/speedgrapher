@@ -4,6 +4,6 @@
 
 int main(int argc, char** argv) {
   QApplication app(argc, argv);
-  SpeedGrapherDemo d;
-  app.exec();
+  SpeedGrapherDemo demo;
+  return app.exec();
 }

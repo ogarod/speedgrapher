@@ -23,22 +23,11 @@
 */
 
 #include "speed-grapher.h"
-#include <QGraphicsTextItem>
 #include <QDebug>
+#include <QGraphicsTextItem>
 #include <QScopedPointer>
 
 using std::vector;
-
-// TODO(ogaro): Sort includes and methods.
-// TODO(ogaro): Make border a style attr.
-// TODO(ogaro): Gridlines should probably be added as style attributes.
-static const char* kUmemeStyle =
-    "QGroupBox { "
-    "  border: 0; "
-    "}"
-    "QGraphicsView { "
-    "  border: 1px solid #ddd; "
-    "}";
 
 SpeedGrapher::SpeedGrapher(QWidget* parent, const QSize& size,
                            int num_vertical_gridlines,
@@ -85,10 +74,9 @@ SpeedGrapher::SpeedGrapher(QWidget* parent, const QSize& size,
   scene_.setSceneRect(0, 0, size_.width(), size_.height());
   setFrameShape(QFrame::NoFrame);
   setFixedSize(size_);
-  UpdatePlot(false);
-  setStyleSheet(kUmemeStyle);
   setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
   setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+  UpdatePlot(false);
   show();
 }
 
@@ -132,6 +120,7 @@ void SpeedGrapher::UpdatePlot(bool show_indicators) {
   if (!show_indicators) {
     return;
   }
+
   // Draw indicator dot.
   double dot_size = style_dict_[INDICATOR_DOT_SIZE].toDouble();
   double dot_x = last_x - dot_size / 2;
@@ -242,7 +231,6 @@ void SpeedGrapher::AddDataPoint(double y, double progress,
              << " out of range";
     return;
   }
-  // TODO(ogaro): Remove.
   indicator_text_ = indicator_text;
   ys_.push_back(y);
   progress_ = progress;

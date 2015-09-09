@@ -25,7 +25,6 @@
 #include "demo.h"
 #include <QTimer>
 #include <QVBoxLayout>
-#include <QDebug>
 
 SpeedGrapherDemo::SpeedGrapherDemo()
     : num_points_(400),
@@ -52,7 +51,9 @@ SpeedGrapherDemo::~SpeedGrapherDemo() {}
 void SpeedGrapherDemo::Step() {
  if (iter_ < num_points_) {
    double progress = (iter_ + 1.0) / num_points_;
-   speed_grapher_->AddDataPoint(ys_[iter_], progress);
+   QString caption = QString("%1 MB/s").arg(
+       QString::number(ys_[iter_], 'g', 2));
+   speed_grapher_->AddDataPoint(ys_[iter_], progress, caption);
    iter_ += 1;
  } else {
    speed_grapher_->UpdatePlot(false);
