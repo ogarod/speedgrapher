@@ -30,9 +30,9 @@ SpeedGrapherDemo::SpeedGrapherDemo()
     : num_points_(400),
       num_oscillations_(4.8),
       interval_ms_(100),
-      iter_(0) {
-  timer_ = new QTimer(this);
-  speed_grapher_ = new SpeedGrapher(this);
+      iter_(0),
+      timer_(new QTimer(this)),
+      speed_grapher_(new SpeedGrapher(this)) {
 
   // Compute data points for the function |sin(Kx))| + r(x) where K is a
   // constant and r is a random function with the range [0, 1].
