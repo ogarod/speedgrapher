@@ -100,8 +100,8 @@ class SpeedGrapher : public QGraphicsView {
 
   // Helper method for creating pens.
   QPen* MkPen(StyleAttribute color_attr,
-                       StyleAttribute alpha_attr,
-                       StyleAttribute width_attr);
+              StyleAttribute alpha_attr,
+              StyleAttribute width_attr);
 
   // Helper method for creating brushes.
   QBrush* MkBrush(StyleAttribute color_attr,
