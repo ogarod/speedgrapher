@@ -52,12 +52,12 @@ SpeedGrapherDemo::SpeedGrapherDemo()
 SpeedGrapherDemo::~SpeedGrapherDemo() {}
 
 void SpeedGrapherDemo::Step() {
- if (iter_ < num_points_) {
-   double progress = (iter_ + 1.0) / num_points_;
-   QString caption = QString("%1 MB/s").arg(
+  if (iter_ < num_points_) {
+    double progress = (iter_ + 1.0) / num_points_;
+    QString caption = QString("%1 MB/s").arg(
        QString::number(ys_[iter_], 'g', 2));
-   speed_grapher_->AddDataPoint(ys_[iter_++], progress, caption);
- } else {
-   speed_grapher_->UpdatePlot(false);
- }
+    speed_grapher_->AddDataPoint(ys_[iter_++], progress, caption);
+  } else {
+    speed_grapher_->UpdatePlot(false);
+  }
 }
