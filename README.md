@@ -15,7 +15,7 @@ While the operation you want to visualize is in progress, call  `AddDataPoint()`
 ```cpp
 speed_grapher->AddDataPoint(data_point, progress, caption);
 ```
-The color theme for the SpeedGrapher is highly customizable. You use `SetStyleAttribute()` to change particular style attributes for a SpeedGrapher instance. The default style attributes are defined in `speedgrapher.cc`
+The color theme for the SpeedGrapher is easily customizable. You use `SetStyleAttribute()` to change particular style attributes for a SpeedGrapher instance. The default style attributes are defined in `speedgrapher.cc`
 ```cpp
   style_dict_ = {
       {BACKGROUND_BRUSH_COLOR, "#fff"},
