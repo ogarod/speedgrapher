@@ -33,7 +33,6 @@ SpeedGrapherDemo::SpeedGrapherDemo()
       iter_(0),
       timer_(new QTimer(this)),
       speed_grapher_(new SpeedGrapher(this)) {
-
   // Compute data points for the function |sin(Kx))| + r(x) where K is a
   // constant and r is a random function with the range [0, 1].
   double K = 2 * M_PI * num_oscillations_ / (num_points_ - 1);
