@@ -25,8 +25,6 @@
 #ifndef SPEED_GRAPHER_H_
 #define SPEED_GRAPHER_H_
 
-#define _USE_MATH_DEFINES 1;
-#include <math.h>
 #include <vector>
 
 #include <QGraphicsView>
