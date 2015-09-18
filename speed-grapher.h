@@ -28,10 +28,8 @@
 #include <vector>
 
 #include <QGraphicsView>
-#include <QObject>
 #include <QPainterPath>
 #include <QSize>
-#include <QString>
 #include <QVariant>
 
 // A widget for real-time visualization of speed and progress - the combination

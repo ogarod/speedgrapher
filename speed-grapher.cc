@@ -23,6 +23,7 @@
 */
 
 #include "speed-grapher.h"
+
 #include <QDebug>
 #include <QGraphicsTextItem>
 #include <QScopedPointer>
