@@ -38,12 +38,12 @@ class SpeedGrapherDemo : public QWidget {
   void Step();
 
  private:
-  SpeedGrapher* speed_grapher_;
-  QTimer* timer_;
   int num_points_; // Total number of data points the demo will generate.
   double num_oscillations_; // Number of oscillations for the demo function.
   int interval_ms_; // Interval between speedgrapher updates.
   std::vector<double> ys_; // Data points.
   int iter_; // A counter for iterations.
+  QTimer* timer_;
+  SpeedGrapher* speed_grapher_;
 };
 #endif // DEMO_H_
