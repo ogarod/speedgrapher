@@ -38,9 +38,9 @@ SpeedGrapher::SpeedGrapher(QWidget* parent, const QSize& size,
       num_vertical_gridlines_(num_vertical_gridlines),
       num_horizontal_gridlines_(num_horizontal_gridlines),
       yprop_(0.83),
-      progress_(0),
-      indicator_text_margin_bottom_(3),
-      indicator_text_margin_right_(10) {
+      progress_(0.0),
+      indicator_text_margin_bottom_(3.0),
+      indicator_text_margin_right_(10.0) {
   style_dict_ = {
       {BACKGROUND_BRUSH_COLOR, "#fff"},
       {BACKGROUND_BRUSH_ALPHA, 1.0},
