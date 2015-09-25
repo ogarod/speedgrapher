@@ -33,10 +33,14 @@ using std::vector;
 SpeedGrapher::SpeedGrapher(QWidget* parent, const QSize& size,
                            int num_vertical_gridlines,
                            int num_horizontal_gridlines)
-    : QGraphicsView(parent) {
-  size_ = size;
-  num_vertical_gridlines_ = num_vertical_gridlines;
-  num_horizontal_gridlines_ = num_horizontal_gridlines;
+    : QGraphicsView(parent),
+      size_(size),
+      num_vertical_gridlines_(num_vertical_gridlines),
+      num_horizontal_gridlines_(num_horizontal_gridlines),
+      yprop_(0.83),
+      progress_(0),
+      indicator_text_margin_bottom_(3),
+      indicator_text_margin_right_(10) {
   style_dict_ = {
       {BACKGROUND_BRUSH_COLOR, "#fff"},
       {BACKGROUND_BRUSH_ALPHA, 1.0},
@@ -64,11 +68,7 @@ SpeedGrapher::SpeedGrapher(QWidget* parent, const QSize& size,
       {INDICATOR_TEXT_COLOR, "#ccc"},
       {INDICATOR_TEXT_ALPHA, 1.0},
   };
-  ys_ = {0};
-  yprop_ = 0.83;
-  progress_ = 0;
-  indicator_text_margin_bottom_ = 3;
-  indicator_text_margin_right_ = 10;
+  ys_.push_back(0); // First data point to plot.
 
   setScene(&scene_);
   setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
