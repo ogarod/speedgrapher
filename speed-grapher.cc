@@ -147,9 +147,10 @@ void SpeedGrapher::UpdatePlot(bool show_indicators) {
   if (text.isEmpty()) {
     text = QString::number(ys_.back());
   }
-  QGraphicsTextItem* text_item = scene_.addText(text,
-      QFont(style_dict_[INDICATOR_TEXT_FONT_NAME].toString(),
-            style_dict_[INDICATOR_TEXT_FONT_SIZE].toDouble()));
+  QGraphicsTextItem* text_item =
+      scene_.addText(text,
+                     QFont(style_dict_[INDICATOR_TEXT_FONT_NAME].toString(),
+                           style_dict_[INDICATOR_TEXT_FONT_SIZE].toDouble()));
   QColor text_color = QColor();
   text_color.setNamedColor(style_dict_[INDICATOR_TEXT_COLOR].toString());
   text_color.setAlphaF(style_dict_[INDICATOR_TEXT_ALPHA].toDouble());
