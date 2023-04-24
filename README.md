@@ -1,6 +1,6 @@
 # SpeedGrapher
 A Qt widget for real-time visualization of speed and progress. SpeedGrapher is the combination of a line chart and a progress bar.
-[Speed Grapher screenshot 1](https://github.com/demonchild2112/speedgrapher/blob/master/images/sg_shot1.png)
+![Speed Grapher screenshot 1](https://github.com/demonchild2112/speedgrapher/blob/master/images/sg_shot1.png)
 
 ## Usage
 Using the widget is pretty straightforward. First, instantiate a SpeedGrapher. You have three constructors to pick from. The base constructor allows you to specify a size for the widget and the number of vertical and horizontal gridlines to show. The other constructors define defaults that may or may not be suited to your needs.
